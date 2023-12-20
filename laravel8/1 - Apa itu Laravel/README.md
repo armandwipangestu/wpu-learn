@@ -1,4 +1,4 @@
-## Daftar Pustaka
+## Daftar Isi
 
 - [Apa itu Laravel?](#apa-itu-laravel)
   - [Apa itu Web Application Framework?](#apa-itu-web-application-framework)

@@ -1,4 +1,4 @@
-## Daftar Pustaka
+## Daftar Isi
 
 - [Instalasi dan Konfigurasi Laravel](#instalasi-dan-konfigurasi-laravel)
   - [Mengecek PHP](#mengecek-php)
