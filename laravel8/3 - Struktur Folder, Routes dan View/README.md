@@ -27,6 +27,11 @@
   - [Providers Direktori](#providers-direktori)
   - [Rules Direktori](#rules-direktori)
 - [Lokasi Folder atau File MVC dan Yang Perlu Di ingat pada Aplikasi Laravel](#lokasi-folder-atau-file-mvc-dan-yang-perlu-di-ingat-pada-aplikasi-laravel)
+- [Simpel Route Laravel](#simpel-route-laravel)
+- [Membuat View dan Menggunakannya di Route Laravel](#membuat-view-dan-menggunakannya-di-route-laravel)
+- [Menerapkan CSS kedalam View di Laravel](#menerapkan-css-kedalam-view-di-laravel)
+- [Menerapkan Javascript kedalam View di Laravel](#menerapkan-javascript-kedalam-view-di-laravel)
+- [Menerapkan Gambar kedalam View di Laravel](#menerapkan-gambar-kedalam-view-di-laravel)
 
 > **Catatan**:
 >
@@ -165,3 +170,199 @@ Direktori `Rules` ini tidak ada secara default, tetapi akan dibuat untuk Anda ji
 | Assets Statis          | `public`                  | Semua yang berhubungan dengan asset statis (css, javascript, gambar)                                             |
 | Assets Sistem Bundling | `resources/{css,js,lang}` | Semua yang berhubungan dengan asset saat menggunakan sistem bundling                                             |
 | Environment File       | `.env`                    | Semua yang berhubungan dengan environment aplikasi Laravel, seperti informasi Database, app url atau baseurl dsb |
+
+## Simpel Route Laravel
+
+Ketika kalian berhubungan dengan yang nama route atau rute pada aplikasi kalian, maka kalian perlu mengetahui bagaimana dan dari mana kode tersebut ditangani, pada Laravel ini, route aplikasi kalian di tangani oleh file `app/routes/web.php` jika kasus nya adalah web.
+
+Simpel route yang sudah ada adalah seperti berikut:
+
+```php
+Route::get('/', function () {
+    return view('welcome');
+});
+```
+
+> **Catatan**:
+>
+> Sebetulnya nama file lengkap dari view nya adalah `welcome.blade.php`. `blade` disini adalah sebuah templating engine dari laravel yang dimana kita bisa mengetikan perintah perintah tertentu pada view tersebut. Namun sebetulnya jika kita hapus nama `blade` tersebut tidak akan terjadi apa-apa (akan tetap tampil) namun akan ada fitur-fitur yang tidak jalan.
+
+Perintah tersebut artinya adalah, laravel tolong tampilkan view `welcome` ketika ada request user yang mengarah ke route `/` atau `root`. Laravel akan mencari view yang nama file nya `welcome` terlebih dahulu di folder `resources/views`
+
+## Membuat View dan Menggunakannya di Route Laravel
+
+Untuk membuat sebuah view baru, kalian bisa membuat sebuah file di foler `resources/views` dengan nama file `*.blade.php`, misalkan disini saya membuat view baru untuk Home dengan nama file `home.blade.php`. Kemudian isikan struktur HTML biasa seperti berikut ini:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>WPU Blog | Home</title>
+  </head>
+  <body>
+    <h1>Halaman Home</h1>
+  </body>
+</html>
+```
+
+Setelah view nya dibuat, selanjutnya gunakan view tersebut di routes nya seperti berikut ini di file `app/routes/web.php`:
+
+```php
+Route::get('/', function () {
+    return view('home');
+});
+```
+
+Maka akan view nya muncul seperti gambar dibawah ini
+
+> **Catatan**:
+>
+> Disini saya menggunakan valet, sehingga mempunyai top level domain `*.test`, apabila kalian sama menggunakan valet, maka kalian harus mengubah `APP_URL` atau baseurl laravel kalian di file `.env` agar mengarah ke nama domain tersebut
+>
+> ```bash
+> APP_URL=http://wpu-laravel-8.test
+> ```
+
+![View Home](assets/view-home.png)
+
+## Menerapkan CSS kedalam View di Laravel
+
+Seperti yang sudah dijelaskan di pengertian atau fungsi folder diatas, kita bisa membuat file statis di folder `public`, sehingga jika ingin membuat file CSS kita bisa membuat misal dengan struktur seperti ini `public/assets/css/style.css` dengan isian file mengubah warna background body menjadi salmon
+
+```css
+body {
+  background-color: salmon;
+}
+```
+
+Setelah CSS dibuat, selanjutnya adalah melakukan load CSS pada bagian view nya, misalkan disini saya akan menerapkan CSS tersebut di view `home.blade.php`
+
+> **Catatan**:
+>
+> href atau URL pada bagian link yang meload CSS ini sudah relative terhadap folder `public` nya, sehingga tidak perlu menuliskan `public` nya.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    ...
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>WPU Blog | Home</title>
+  </head>
+  <body>
+    <h1>Halaman Home</h1>
+  </body>
+</html>
+```
+
+Maka sekarang background dari view `home` nya akan berwana merah salmon seperti berikut ini
+
+![View Home Salmon](assets/view-home-salmon.png)
+
+## Menerapkan Javascript kedalam View di Laravel
+
+Sama halnya seperti CSS, kita juga bisa menerapkan javascript pada aplikasi laravel kita, misalkan disini saya membuat file js di folder `public/assets/js/script.js` dengan isian
+
+```js
+alert("Hello WPU!");
+```
+
+Nah, setelah file javascript dibuat selanjutnya kita load pada view kita dibagian sebelum tag penutup element `body`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    ...
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>WPU Blog | Home</title>
+  </head>
+  <body>
+    <h1>Halaman Home</h1>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
+```
+
+Maka sekarang ketika view `home` nya di load pertama kali, akan muncul sebuah alert dengan tulisan `Hello WPU!` seperti digambar berikut ini
+
+![View Home Alert](assets/view-home-alert.png)
+
+## Menerapkan Gambar kedalam View di Laravel
+
+Sama halnya seperti CSS dan Javascript diatas, kita juga bisa menerapkan gambar di aplikasi laravel kita, misalkan disini saya mempunyai gambar di folder `public/assets/img` dengan nama file nya `arman.jpg`
+
+Maka, sekarang kita bisa load gambar tersebut pada bagian view dengan tag `img` seperti berikut ini di file `home.blade.php`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    ...
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>WPU Blog | Home</title>
+  </head>
+  <body>
+    <h1>Halaman Home</h1>
+    <h3>Arman Dwi Pangestu</h3>
+    <p>armandwi.pangestu7@gmail.com</p>
+    <img src="assets/img/arman.jpg" alt="Foto Saya" width="200" height="300" />
+  </body>
+</html>
+```
+
+Maka sekarang jika kita lihat view `home` nya akan muncul sebuah gambar seperti pada gambar berikut ini
+
+![View Home Image](assets/view-home-image.png)
+
+## Mengirim Data Dari Routes kedalam View di Laravel
+
+Pada laravel, kita bisa mengirimkan data dari Route kedalam View, misalkan disini saya ingin mengirim `nama`, `email` dan `gambar` di view home menjadi dinamis (anggap saja data tersebut seharusnya berubah-ubah sesuai dengan user nya). Maka kita bisa kirim data dari `routes` seperti berikut ini:
+
+> **Catatan**:
+>
+> Untuk mengirimkan data dari routes kedalam view kita cukup berikan data menggunakan associative array dengan pembatas koma setelah nama view nya seperti berikut
+>
+> ```php
+> view('nama_view', [
+>   "data-key-1" => "data-value-1"
+> ]);
+> ```
+
+```php
+Route::get('/', function () {
+    return view('home', [
+        "name" => "Arman Dwi Pangestu",
+        "email" => "armandwi.pangestu7@gmail.com",
+        "image" => "arman.jpg"
+    ]);
+});
+```
+
+Setelah data dikirimkan kedalam view, selanjutnya kita bisa menggunakan data tersebut di file view yang dikirim nya seperti berikut
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    ...
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>WPU Blog | Home</title>
+  </head>
+  <body>
+    <h1>Halaman Home</h1>
+    <h3>{{ $name }}</h3>
+    <p>{{ $email }}</p>
+    <img
+      src="assets/img/{{ $image }}"
+      alt="Foto Saya"
+      width="200"
+      height="300"
+    />
+  </body>
+</html>
+```
