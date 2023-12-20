@@ -32,6 +32,7 @@
 - [Menerapkan CSS kedalam View di Laravel](#menerapkan-css-kedalam-view-di-laravel)
 - [Menerapkan Javascript kedalam View di Laravel](#menerapkan-javascript-kedalam-view-di-laravel)
 - [Menerapkan Gambar kedalam View di Laravel](#menerapkan-gambar-kedalam-view-di-laravel)
+- [Mengirim Data Dari Routes kedalam View di Laravel](#mengirim-data-dari-routes-kedalam-view-di-laravel)
 
 > **Catatan**:
 >
