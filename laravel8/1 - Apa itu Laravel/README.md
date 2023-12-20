@@ -12,7 +12,7 @@
 
 ## Apa itu Laravel?
 
-Jika dikutip melalui web resmi nya di [laravle.com](https://laravel.com)
+Jika dikutip melalui web resmi nya di [laravel.com](https://laravel.com)
 
 > "Laravel is a web application framework with expressive, elegant syntax."
 
