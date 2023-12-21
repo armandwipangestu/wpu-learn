@@ -5,7 +5,8 @@
 - [Membuat Sistem Layouting Sederhana Menggunakan Blade](#membuat-sistem-layouting-sederhana-menggunakan-blade)
   - [Dynamic Title](#dynamic-title)
   - [Dynamic Active Link](#dynamic-active-link)
-- [Mengirim Data Konten Untuk Route Blog](#mengirim-data-konten-untuk-route-blog)
+- [Mengirim Data Konten Untuk Route Single Post](#mengirim-data-konten-untuk-route-single-post)
+- [Membuat View Untuk Single Post](#membuat-view-untuk-single-post)
 
 ## Apa itu Templating Engine?
 
@@ -278,7 +279,7 @@ Maka sekarang jika kalian berpindah ke posisi masing-masing route, class active 
 
 ![Blade Dynamic Active Link](assets/blade-dynamic-active-link.png)
 
-## Mengirim Data Konten Untuk Route Blog
+## Mengirim Data Konten Untuk Route Single Post
 
 Pada bagian ini kita akan mengirimkan data untuk konten di route `/blog` dan menampilkan nya. Untuk mengirimkan nya sama seperti sebelumnya, misalkan disini kita akan menampung terlebih dahulu kontent data nya pada sebuah variabel `$blog_post` seperti berikut ini
 
