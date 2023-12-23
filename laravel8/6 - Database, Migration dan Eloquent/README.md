@@ -243,7 +243,7 @@ Nah file class tersebut kita anggap sebagai class adalah `Blueprint` nya atau ce
 
 > **Catatan**:
 >
-> Jika kalian menyimpan file Model nya sesuai aturan yaitu di `app/Models`, kita bisa langsung melakukan instance pada class tersebut hanya dengan nam file nya saja seperti berikut ini
+> Jika kalian menyimpan file Model nya sesuai aturan yaitu di `app/Models`, kita bisa langsung melakukan instance pada class tersebut hanya dengan nama file nya saja seperti berikut ini
 >
 > ```php
 > $user = new User;
