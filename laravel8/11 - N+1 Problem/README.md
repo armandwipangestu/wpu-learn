@@ -18,9 +18,9 @@ Pada pembahasan sebelumnya kita telah berhasil melakukan relasi 3 tabel, yaitu t
 
 Hal tersebut untuk saat ini mungkin belum terasa karena post yang kita punya masih belum banyak seperti 20 atau 25 post. Namun bagaimana jika nanti kedepannya aplikasi kita makin besar, post nya sudah banyak, penulis nya udah banyak semisal bisa sampai 200 post bahkan 2000 post. Nah, pada momen tersebut lah akan mulai terasa performance dari aplikasi kita pasti menurun.
 
-Problem yang kita hadapi tersebut itu dinamakn dengan `N+1 Problem`, hal tersebut erat kaitannya dengan relasi serta query yang kita lakukan pada aplikasi kita. Nah apa itu `N+1 Problem`? dan bagaimana cara mengatasinya?
+Problem yang kita hadapi tersebut itu dinamakan dengan `N+1 Problem`, hal tersebut erat kaitannya dengan relasi serta query yang kita lakukan pada aplikasi kita. Nah apa itu `N+1 Problem`? dan bagaimana cara mengatasinya?
 
-Sebelum membahas masalah dan cara mengatasi hal tersebut, disini kita perbaiki dulu view pada bagian category agar menampilkan detail deskripsi seperti author dan category nya seperti pada tampilan posts dan juga kita akan buat agar halaman category, author dan halaman posts mengarah pada view yang sama agar kita tidak perlu lagi membuat view untuk masing-masing route tersebut. Untuk melakukannya kita bisa jadikan file view `posts.blade.php` agar menjadi view dari ketiga route tersebut. Oleh karena itu sekarang kit bisa buka file routes `web.php` kemudian cari route yang mengarah category, ... agar mengarah ke view `posts`
+Sebelum membahas masalah dan cara mengatasi hal tersebut, disini kita perbaiki dulu view pada bagian category agar menampilkan detail deskripsi seperti author dan category nya seperti pada tampilan posts dan juga kita akan buat agar halaman category, author dan halaman posts mengarah pada view yang sama agar kita tidak perlu lagi membuat view untuk masing-masing route tersebut. Untuk melakukannya kita bisa jadikan file view `posts.blade.php` agar menjadi view dari ketiga route tersebut. Oleh karena itu sekarang kita bisa buka file routes `web.php` kemudian cari route yang mengarah category dan author agar mengarah ke view `posts`
 
 ```php
 Route::get('/categories/{category:slug}', function(Category $category) {
@@ -32,7 +32,7 @@ Route::get('/categories/{category:slug}', function(Category $category) {
 });
 ```
 
-Maka sekarang tampilan pada halaman category nya sudah terdapat deskripsi seperti author dan juga category pada setiap postingan nya. Selanjutnya kita tinggal buat agar heading dari view `posts` nya menjadi dinamis dengan cara membuat title yang dikirim pada route atau controller nya
+Maka sekarang tampilan pada halaman category nya sudah terdapat deskripsi seperti author dan juga category pada setiap postingan nya. Selanjutnya kita tinggal buat agar heading dari view `posts` nya menjadi dinamis dengan cara menggunakan title yang dikirim pada route atau controller nya
 
 ```php
 Route::get('/categories/{category:slug}', function(Category $category) {
