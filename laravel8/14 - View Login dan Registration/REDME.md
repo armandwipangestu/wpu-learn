@@ -7,6 +7,9 @@
   - [Membuat Controller Login](#membuat-controller-login)
   - [Membuat View Login](#membuat-view-login)
 - [View Register](#view-register)
+  - [Membuat Route Register](#membuat-route-register)
+  - [Membuat Controller Register](#membuat-controller-register)
+  - [Membuat View Register](#membuat-controller-register)
 
 ## Pendahuluan
 
