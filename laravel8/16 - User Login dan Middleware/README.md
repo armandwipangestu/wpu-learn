@@ -5,7 +5,7 @@
   - [Starter Kits](#starter-kits)
   - [Manual Authentication](#manual-authentication)
 - [Memperbaiki Bagian View Login](#memperbaiki-bagian-view-login)
-- [Memnyiapkan Route Untuk Login](#menyiapkan-route-login)
+- [Menyiapkan Route Untuk Login](#menyiapkan-route-login)
 - [Membuat Method authenticate](#membuat-method-authenticate)
   - [Validasi Credentials](#validasi-credentials)
   - [Pengecekan Login](#pengecekan-login)
