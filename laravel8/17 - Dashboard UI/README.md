@@ -16,7 +16,7 @@
 
 ## Pendahuluan
 
-Setelah sebelunya kita sudah berhasil menambahkan feature login dan registrasi pada aplikasi blog sistem kita. Kali ini kita akan masuk kedalam dashboard dalam aplikasi kita, dimana nantinya kita bisa menambahkan feature pengelolaan postingan kita atau blog post kita seperti menambah, melihat detail, mengubah dan menghapus atau istilah nya disebut dengan CRUD (Create, Read, Update dan Delete) Operation.
+Setelah sebelumya kita sudah berhasil menambahkan feature login dan registrasi pada aplikasi blog sistem kita. Kali ini kita akan masuk kedalam dashboard dalam aplikasi kita, dimana nantinya kita bisa menambahkan feature pengelolaan postingan kita atau blog post kita seperti menambah, melihat detail, mengubah dan menghapus atau istilah nya disebut dengan CRUD (Create, Read, Update dan Delete) Operation.
 
 Nah, sebelum masuk kesana kita akan membuat terlebih dahulu tampilan atau UI dari halaman dashboard nya itu sendiri, nantinya kita akan memanfaatkan kembali template atau komponen example yang sudah dikasih oleh bootstrap secara gratis untuk kita implementasikan sebagai dashboard kita.
 
